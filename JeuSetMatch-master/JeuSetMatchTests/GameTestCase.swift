@@ -2,7 +2,7 @@
 //  GameTestCase.swift
 //  JeuSetMatchUITests
 //
-//  Created by Steve Bernard on 17/11/2019.
+//  Created by Steve Bernard on 19/11/2019.
 //  Copyright © 2019 OpenClassrooms. All rights reserved.
 //
 
@@ -11,14 +11,14 @@ import XCTest
 
 class GameTestCase: XCTestCase {
     func testGivenScoreIsNull_WhenIncrementingPlayer1Score_ThenScoreShouldBeFifteen() {
-        // Given
-        let game  = Game()
+          // Given
+          let game = Game()
 
-        //When
-        game.incrementScore(forPlayer: .one)
+          //When
+          game.incrementScore(forPlayer: .one)
 
-        //Then
-        XCTAssert(game.scores[.one]! == 15)
-        XCTAssert(game.scores[.two]! == 0)
-    }
+          //Then
+          XCTAssert(game.scores[.one]! == 15)
+          XCTAssert(game.scores[.two]! == 0)
+      }
 }
