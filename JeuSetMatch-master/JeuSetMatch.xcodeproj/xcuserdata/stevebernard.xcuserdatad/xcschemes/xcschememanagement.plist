@@ -4,10 +4,28 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>JeuSetMatch.xcscheme_^#shared#^_</key>
+		<key>JeuSetMatch.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>C902929C1F8D0500003E6B8B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9BE2FA52384F49700BDDD96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9EF82CC2382003D000971EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
