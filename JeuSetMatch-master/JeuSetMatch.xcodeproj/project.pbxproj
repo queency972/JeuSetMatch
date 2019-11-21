@@ -18,6 +18,7 @@
 		E9BE2FB02384F4F800BDDD96 /* GameTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BE2F9C238460BA00BDDD96 /* GameTestCase.swift */; };
 		E9BE2FB12384F4FD00BDDD96 /* SetTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BE2F9E2384619100BDDD96 /* SetTestCase.swift */; };
 		E9BE2FB22384F50000BDDD96 /* MatchTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BE2FA0238461DA00BDDD96 /* MatchTestCase.swift */; };
+		E9D84AA22386317D000FBCE7 /* TieBreakGameTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D84AA12386317D000FBCE7 /* TieBreakGameTestCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		E9BE2FA0238461DA00BDDD96 /* MatchTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTestCase.swift; sourceTree = "<group>"; };
 		E9BE2FA62384F49700BDDD96 /* JeuSetMatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JeuSetMatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9BE2FAA2384F49700BDDD96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9D84AA12386317D000FBCE7 /* TieBreakGameTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TieBreakGameTestCase.swift; sourceTree = "<group>"; };
 		E9EF82CD2382003D000971EF /* JeuSetMatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JeuSetMatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9EF82D12382003D000971EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +159,7 @@
 				E9BE2F9E2384619100BDDD96 /* SetTestCase.swift */,
 				E9BE2FA0238461DA00BDDD96 /* MatchTestCase.swift */,
 				E9BE2FAA2384F49700BDDD96 /* Info.plist */,
+				E9D84AA12386317D000FBCE7 /* TieBreakGameTestCase.swift */,
 			);
 			path = JeuSetMatchTests;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			files = (
 				E9BE2FB22384F50000BDDD96 /* MatchTestCase.swift in Sources */,
 				E9BE2FB12384F4FD00BDDD96 /* SetTestCase.swift in Sources */,
+				E9D84AA22386317D000FBCE7 /* TieBreakGameTestCase.swift in Sources */,
 				E9BE2FB02384F4F800BDDD96 /* GameTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
