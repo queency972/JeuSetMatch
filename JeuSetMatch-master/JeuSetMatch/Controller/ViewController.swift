@@ -76,7 +76,16 @@ class ViewController: UIViewController {
 
     private func updateGameScore(forPlayer player: Player) {
         let gameScore = match.currentGame.scores[player]
-        playerGameScoreLabels[player]!.text = "\(gameScore!)"
+         let avantage = match.currentGame.avantage
+        if let playerHasAvantage = avantage {
+            if playerHasAvantage == player {
+                playerGameScoreLabels[player]!.text = "\(gameScore!)A"
+            } else {
+                playerGameScoreLabels[player]!.text = "\(gameScore!)"
+            }
+        } else {
+            playerGameScoreLabels[player]!.text = "\(gameScore!)"
+       }
     }
 
     private func updateInfoUI() {

@@ -24,11 +24,24 @@ class Game {
         return winner != nil
     }
 
+    var deuce: Bool {
+        scores[Player.one]! == 40 && scores[Player.two]! == 40
+    }
+
+    var avantage: Player?
+
     // MARK: - Methods
     func incrementScore(forPlayer player: Player) {
         if let score = scores[player], let scoreIndex = Game.points.firstIndex(of: score) {
             if score < 40 {
                 scores[player] = Game.points[scoreIndex + 1]
+            } else if deuce {
+                guard let currentAvantage = avantage else { avantage = player; return }
+                if currentAvantage == player {
+                    end(withWinner: player)
+                } else {
+                    avantage = nil
+                }
             } else {
                 end(withWinner: player)
             }
@@ -42,11 +55,15 @@ class Game {
 
 class TieBreakGame: Game {
     private static let scoreToReach = 7
+    // On applique les 2 points d'ecart.
     private var isTwoPointsAhead: Bool {
         return abs(scores[.one]! - scores[.two]!) >= 2
     }
+
     override func incrementScore(forPlayer player: Player) {
+        // Score doit passer de 0 à 1 (TieBreak)
         scores[player]! += 1
+        // Qd le score atteint la valeur 7, le jeu se termine et on determine le vainqueur.
         if scores[player]! >= TieBreakGame.scoreToReach && isTwoPointsAhead {
         end(withWinner: player)
         }

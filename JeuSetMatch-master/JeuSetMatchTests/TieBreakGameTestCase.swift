@@ -17,12 +17,14 @@ class TieBreakGameTestCase: XCTestCase {
         tieBreakGame = TieBreakGame()
     }
 
+    // Score doit passer de 0 à 1 (TieBreak)
     func testGivenScoreIs0_WhenIncrementingScore_ThenScoreIs1() {
         tieBreakGame.incrementScore(forPlayer: .one)
 
         XCTAssertEqual(tieBreakGame.scores[.one], 1)
     }
 
+    // Qd le score atteint la valeur 7 le jeu doit se terminer.
     func testGivenScoreIs6_WhenIncrementingScore_ThenScoreIs7AndGameIsOver() {
         tieBreakGame.scores[.one] = 6
 
@@ -33,6 +35,7 @@ class TieBreakGameTestCase: XCTestCase {
 
     }
 
+    // Test des 2 points d'ecart.
     func testGivenScoreIs6To6_WhenIncrementingScore_ThenScoreIs7To6AndGameIsNotOver() {
         tieBreakGame.scores[.one] = 6
         tieBreakGame.scores[.two] = 6

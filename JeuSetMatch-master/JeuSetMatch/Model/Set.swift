@@ -36,7 +36,9 @@ class Set {
 
     // MARK: - Private Getters
     private func getWinner() -> Player? {
+        // Lors du parcours du dictionnaire score des 2 joueurs, on verifie s'il y a 2 points d'ecart.
         for (player, score) in scores where (score == Set.maxNumberOfWonGames && isTwoPointsAhead)
+            // Exception si le joueur atteint 7.
             || score == Set.maxNumberOfWonGames + 1 {
                 return player
             }

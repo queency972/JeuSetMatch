@@ -77,7 +77,7 @@ class MatchTestCase: XCTestCase {
         XCTAssertTrue(match.sets.first!.games.last!.isOver)
         XCTAssertEqual(match.sets.count, 2)
     }
-
+    // Qd on arrive à 6 - 6 le prochain jeu est un TieBreak et non un nouveau jeu normal.
     func testGivenCurrentGameScoreIsFortyAndSetScoreIs6To6_WhenPointIsAdded_ThenTieBreakGameIsCreated() {
         createManyGames(5, wonByPlayer: .one, inSet: match.sets.last!)
         createManyGames(6, wonByPlayer: .two, inSet: match.sets.last!)
@@ -89,4 +89,36 @@ class MatchTestCase: XCTestCase {
         XCTAssert(match.currentGame is TieBreakGame)
     }
 
+    // ==============================================================================================================
+    // Voici les 3 tests final pour la classe Match.
+    // ==============================================================================================================
+
+    func testGivenCurrentGameScoreIsDeuceWithOutAvantage_WhenPointIsAdded_ThenGameIsNotOver() {
+        match.currentGame.scores[.one] = 40
+        match.currentGame.scores[.two] = 40
+        match.pointEnded(wonBy: .one)
+
+        XCTAssertFalse(match.sets.last!.games.first!.isOver)
+    }
+
+     func testGivenCurrentGameScoreIs4040A_WhenPointIsAdded_ThenScoreIsDeuceAndGameHasNotAvantage() {
+        match.currentGame.scores[.one] = 40
+        match.currentGame.scores[.two] = 40
+
+        match.currentGame.avantage = .two
+        match.pointEnded(wonBy: .one)
+
+        XCTAssertTrue(match.currentGame.deuce)
+        XCTAssert(match.currentGame.avantage == nil)
+    }
+
+   func testGivenCurrentGameScoreIs40A_WhenPointIsAdded_ThenPlayerOneWonTheGameAndGameIsOver() {
+        match.currentGame.scores[.one] = 40
+        match.currentGame.scores[.two] = 40
+
+        match.currentGame.avantage = .one
+        match.pointEnded(wonBy: .one)
+
+        XCTAssertTrue(match.sets.last!.games.first!.isOver)
+    }
 }

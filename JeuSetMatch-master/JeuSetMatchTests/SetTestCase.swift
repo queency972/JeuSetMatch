@@ -44,7 +44,8 @@ class SetTestCase: XCTestCase {
         XCTAssertEqual(set.isOver, true)
     }
 
-    func testGivenScoreIs6to5_WhenGettingWinner_ThenWinnerAndSetIsOver() {
+     // Lorsque le jeu est à 6 - 5, le set n'est pas terminé. 
+    func testGivenScoreIs6to5_WhenGettingWinner_ThenWinnerAndSetIsNotOver() {
         createManyGames(6, wonByPlayer: .one)
         createManyGames(5, wonByPlayer: .two)
 
